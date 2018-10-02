@@ -1,0 +1,22 @@
+<div class="container"><app-header> </app-header></div>
+
+<div class="container">
+  <h1>Listagem de Exemplo para data Table</h1>
+
+  <table class="table table table-hover" cellspacing="0" style="width: 100%; border: 1px solid">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Company</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of clients">
+        <td>{{client.firstName}}</td>
+        <td>{{client.lastName}}</td>
+        <td>{{client.company}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
