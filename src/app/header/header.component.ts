@@ -1,7 +1,7 @@
 
 import { Component , OnInit} from '@angular/core';
 
-// import { AuthService } from '../../auth/auth.service';
+import { AuthenticationService } from '../_services/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -12,24 +12,24 @@ export class HeaderComponent implements OnInit {
 
   public showNavBar = false;
 
-  constructor() { }
+  constructor(public authService: AuthenticationService) { }
 
   ngOnInit() {
- /*    this.authService.showNavBarEmitter.subscribe(
+     this.authService.showNavBarEmitter.subscribe(
       (mode: boolean) => {
         if (mode !== null) {
           this.showNavBar = mode;
         }
       }
-    ); */
+    );
   }
 
   isAuth() {
-   // return this.authService.isAuthenticated();
+   return this.authService.isAuthenticated();
   }
 
   onLogout() {
-   // this.authService.logout();
+  this.authService.logout();
   }
 
 }
